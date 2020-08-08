@@ -7,7 +7,7 @@
   margin-top: 25vh;
   height: 250px;
   width: 300px;
-  background-image: url(img/1.png);
+  background-image: url(../img/1.png);
 }
 
 .map-red {
@@ -26,22 +26,25 @@
 .dev1 {
   width: 35px;
   height: 30px;
-  background-image: url(img/dev1.png);
+  background-image: url(../img/dev1.png);
 }
+
 .dev2 {
   width: 35px;
   height: 30px;
-  background-image: url(img/dev2.png);
+  background-image: url(../img/dev2.png);
 }
+
 .dev3 {
   width: 35px;
   height: 30px;
-  background-image: url(img/dev3.png);
+  background-image: url(../img/dev3.png);
 }
+
 .dev4 {
   width: 35px;
   height: 30px;
-  background-image: url(img/dev4.png);
+  background-image: url(../img/dev4.png);
 }
 
 .dev1,

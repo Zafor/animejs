@@ -1,102 +1,119 @@
+<!-- 
+  Author: Zafor Iqbal
+  Website: https://zaforiqbal.com/
+  email: zaforiqbal13@gmail.com
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="demo">
-      <div class="square" id="square">
-        <div>
-          <div class="map-red">
-            <img src="img/Map.png" id="map-red" alt="" />
-          </div>
-        </div>
-        <div class="development">
-          <div class="dev1" id="dev1"></div>
-          <div class="dev2" id="dev2"></div>
-          <div class="dev3" id="dev3"></div>
-          <div class="dev4" id="dev4"></div>
-        </div>
-        <div id="writing">
-          <img src="img/writing.png" alt="" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <!-- Main Style -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="demo">
+    <div class="square" id="square">
+      <div>
+        <div class="map-red">
+          <!-- Map area -->
+          <img src="img/Map.png" id="map-red" alt="" />
         </div>
       </div>
+      <div class="development">
+        <!-- The development images -->
+        <div class="dev1" id="dev1"></div>
+        <div class="dev2" id="dev2"></div>
+        <div class="dev3" id="dev3"></div>
+        <div class="dev4" id="dev4"></div>
+      </div>
+      <div id="writing">
+        <!-- After Image writing -->
+        <img src="img/writing.png" alt="" />
+      </div>
     </div>
-    <script src="anime.min.js"></script>
-    <script>
-      anime({
-        targets: ' .dev1',
-        delay: 1000,
-        translateY: -140,
-        translateX: 60,
-        easing: 'easeInOutQuad',
-        scale: 1,
-      });
-      anime({
-        targets: ' .dev2',
-        delay: 1200,
-        translateY: -125,
-        translateX: 50,
-        easing: 'easeInOutQuad',
-        scale: 1,
-      });
-      anime({
-        targets: ' .dev3',
-        delay: 1400,
-        translateY: -80,
-        translateX: -60,
-        easing: 'easeInOutQuad',
-        scale: 1,
-      });
-      anime({
-        targets: ' .dev4',
-        delay: 1600,
-        translateY: -60,
-        translateX: -40,
-        easing: 'easeInOutQuad',
-        scale: 1,
-      });
+  </div>
+  <!-- Anime js library -->
+  <script src="js/anime.min.js"></script>
+
+  <!-- Main Script -->
+
+  <script>
+    // Auto Animated the dev images and placed them
+    anime({
+      targets: ' .dev1',
+      delay: 1000,
+      translateY: -140,
+      translateX: 60,
+      easing: 'easeInOutQuad',
+      scale: 1,
+    });
+    anime({
+      targets: ' .dev2',
+      delay: 1200,
+      translateY: -125,
+      translateX: 50,
+      easing: 'easeInOutQuad',
+      scale: 1,
+    });
+    anime({
+      targets: ' .dev3',
+      delay: 1400,
+      translateY: -80,
+      translateX: -60,
+      easing: 'easeInOutQuad',
+      scale: 1,
+    });
+    anime({
+      targets: ' .dev4',
+      delay: 1600,
+      translateY: -60,
+      translateX: -40,
+      easing: 'easeInOutQuad',
+      scale: 1,
+    });
+    anime({
+      targets: '.map-red',
+      scale: 1.5,
+      easing: 'easeInOutQuad',
+    });
+    // hide the dev images
+    setTimeout(function () {
+      var elements = ['dev1', 'dev2', 'dev3', 'dev4'];
+      for (i = 0; i < elements.length; i++) {
+        document.getElementById(elements[i]).style.display = 'none';
+      }
+    }, 3 * 1000);
+    // change the background image
+    setTimeout(function () {
+      document.getElementById('square').style.backgroundImage =
+        'url(img/mujib.png)';
+    }, 3900);
+    // load the bedazzeled map
+    setTimeout(function () {
+      document.getElementById('map-red').src = 'img/map-b.png';
       anime({
         targets: '.map-red',
-        scale: 1.5,
+        translateY: -50,
         easing: 'easeInOutQuad',
+        scale: 0.9,
       });
+    }, 3200);
+    // After image overlay writing
+    setTimeout(function () {
+      document.getElementById('writing').style.display = 'block';
+      anime({
+        targets: '#writing',
+        translateX: 30,
+        translateY: 10,
+        scale: 0.8,
+      });
+    }, 3900);
+    clearTimeout();
+  </script>
+</body>
 
-      setTimeout(function () {
-        var elements = ['dev1', 'dev2', 'dev3', 'dev4'];
-        for (i = 0; i < elements.length; i++) {
-          document.getElementById(elements[i]).style.display = 'none';
-        }
-      }, 3 * 1000);
-
-      setTimeout(function () {
-        document.getElementById('square').style.backgroundImage =
-          'url(img/mujib.png)';
-      }, 3900);
-
-      setTimeout(function () {
-        document.getElementById('map-red').src = 'img/map-b.png';
-        anime({
-          targets: '.map-red',
-          translateY: -50,
-          easing: 'easeInOutQuad',
-          scale: 0.9,
-        });
-      }, 3200);
-
-      setTimeout(function () {
-        document.getElementById('writing').style.display = 'block';
-        anime({
-          targets: '#writing',
-          translateX: 30,
-          translateY: 10,
-          scale: 0.8,
-        });
-      }, 3900);
-      clearTimeout();
-    </script>
-  </body>
 </html>
