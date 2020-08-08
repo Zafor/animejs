@@ -1,109 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="demo">
-    <div class="square" id="square">
-      <div class="top-writing" id="top-writing">
-        <img src="img/top-writing.png" alt="" />
-      </div>
-      <div>
-        <div class="map-red">
-          <img src="img/Map.png" id="map-red" alt="" />
+  <body>
+    <div class="demo">
+      <div class="square" id="square">
+        <div class="top-writing" id="top-writing">
+          <img src="img/top-writing.png" alt="" />
+        </div>
+        <div>
+          <div class="map-red">
+            <img src="img/Map.png" id="map-red" alt="" />
+          </div>
+        </div>
+        <div class="list">
+          <div class="list-item" id="dev1" onmouseup="clikCounter(event)">
+            <img src="img/dev1.png" alt="" />
+          </div>
+          <div class="list-item" id="dev2" onmouseup="clikCounter(event)">
+            <img src="img/dev2.png" alt="" />
+          </div>
+          <div class="list-item" id="dev3" onmouseup="clikCounter(event)">
+            <img src="img/dev3.png" alt="" />
+          </div>
+          <div class="list-item" id="dev4" onmouseup="clikCounter(event)">
+            <img src="img/dev4.png" alt="" />
+          </div>
+        </div>
+        <div id="writing">
+          <img src="img/writing.png" alt="" />
         </div>
       </div>
-      <div class="list">
-        <div class="list-item" id="dev1" onmouseup="clikCounter(event)"><img src="img/dev1.png" alt=""></div>
-        <div class="list-item" id="dev2" onmouseup="clikCounter(event)"><img src="img/dev2.png" alt=""> </div>
-        <div class="list-item" id="dev3" onmouseup="clikCounter(event)"><img src="img/dev3.png" alt=""></div>
-        <div class="list-item" id="dev4" onmouseup="clikCounter(event)"><img src="img/dev4.png" alt=""></div>
-      </div>
-      <div id="writing">
-        <img src="img/writing.png" alt="" />
-      </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="anime.min.js"></script>
-  <script>
-    $(function () {
-      $(".list-item").draggable();
-    });
-    var count = 0;
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="anime.min.js"></script>
+    <script>
+      $(function () {
+        $('.list-item').draggable();
+      });
+      var count = 0;
 
-    function clikCounter(event) {
-      count += 1;
-      console.log(count);
-      if (count == 4) {
-        var elements = ['dev1', 'dev2', 'dev3', 'dev4'];
-        for (i = 0; i < elements.length; i++) {
-          document.getElementById(elements[i]).style.display = 'none';
+      function clikCounter(event) {
+        count += 1;
+        console.log(count);
+        if (count == 4) {
+          var elements = ['dev1', 'dev2', 'dev3', 'dev4'];
+          for (i = 0; i < elements.length; i++) {
+            document.getElementById(elements[i]).style.display = 'none';
+          }
+          document.getElementById('top-writing').style.display = 'none';
+          document.getElementById('map-red').src = 'img/map-b.png';
+          anime({
+            targets: '.map-red',
+            easing: 'easeInOutQuad',
+            scale: 0.9,
+          });
+          document.getElementById('square').style.backgroundImage =
+            'url(img/mujib.png)';
+
+          document.getElementById('writing').style.display = 'block';
+          anime({
+            targets: '#writing',
+            translateX: 30,
+            translateY: 65,
+            scale: 0.8,
+          });
         }
-        document.getElementById('top-writing').style.display = 'none';
-        document.getElementById('map-red').src = 'img/map-b.png';
-        anime({
-          targets: '.map-red',
-          easing: 'easeInOutQuad',
-          scale: .9
-        });
-        document.getElementById('square').style.backgroundImage = 'url(img/mujib.png)';
-
-        document.getElementById('writing').style.display = 'block';
-        anime({
-          targets: '#writing',
-          translateX: 30,
-          translateY: 65,
-          scale: 0.8,
-        });
-
       }
-    }
-
-    // setTimeout(function () {
-    //   var elements = ['dev1', 'dev2', 'dev3', 'dev4'];
-    //   for (i = 0; i < elements.length; i++) {
-    //     document.getElementById(elements[i]).style.display = 'none';
-    //   }
-    //   document.getElementById('top-writing').style.display = 'none';
-    // }, 5000);
-
-    // setTimeout(function () {
-    //   document.getElementById('map-red').src = 'img/map-b.png';
-    //   anime({
-    //     targets: '.map-red',
-    //     easing: 'easeInOutQuad',
-    //     scale: .9
-    //   });
-    // }, 5000);
-
-    // setTimeout(function () {
-    //   document.getElementById('square').style.backgroundImage =
-    //     'url(img/mujib.png)';
-    // }, 5200);
-
-    // setTimeout(function () {
-    //   document.getElementById('writing').style.display = 'block';
-    //   anime({
-    //     targets: '#writing',
-    //     translateX: 30,
-    //     translateY: 65,
-    //     scale: 0.8,
-    //   });
-    // }, 5500);
-
-    // clearTimeout();
-  </script>
-
-
-</body>
-
+    </script>
+  </body>
 </html>
