@@ -1,0 +1,41 @@
+.demo {
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  margin-top: 25vh;
+  height: 250px;
+  width: 300px;
+  background-image: url(img/1.png);
+}
+
+.top-writing {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.map-red {
+  background-image: url(img/Map.png);
+  background-repeat: no-repeat;
+  margin-left: 100px;
+  margin-top: 5px;
+  height: 150px;
+  width: 130px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.list-item {
+  height: 40px;
+  width: 40px;
+
+}
+
+#writing {
+  display: none;
+  margin-top: -250px;
+}
